@@ -1,0 +1,74 @@
+/* Absolute duplicate prevention */
+.rsc-ts-bot[data-duplicate],
+.rsc-ts-user[data-duplicate],
+.rsc-ts-bot + .rsc-ts-bot,
+.rsc-ts-user + .rsc-ts-user,
+.rsc-os-options[data-duplicate] {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Force single rendering */
+.rsc-container {
+  contain: strict !important;
+  overflow-anchor: none !important;
+}
+
+/* Options container fix */
+.rsc-os-options {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 8px !important;
+}
+
+.rsc-os-option-element {
+  margin: 0 !important;
+  border-radius: 20px !important;
+  padding: 10px 15px !important;
+  background: #3F7D58 !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+
+.rsc-os-option-element:hover {
+  background: #EC5228 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Custom message styling */
+.unique-message {
+  padding: 12px 20px !important;
+  border-radius: 20px !important;
+  background: #3F7D58 !important;
+  color: white !important;
+  max-width: 80% !important;
+  margin: 8px 0 !important;
+  border: none !important;
+}
+
+/* Input field styling */
+.rsc-input {
+  border-radius: 20px !important;
+  padding: 12px 20px !important;
+  border: 1px solid #ddd !important;
+  font-family: 'Garamond' !important;
+}
+
+/* Submit button */
+.rsc-submit-button {
+  border-radius: 20px !important;
+  padding: 12px 20px !important;
+  background: #EC5228 !important;
+  color: white !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.rsc-submit-button:hover {
+  background: #d84315 !important;
+  transform: translateY(-2px) !important;
+}

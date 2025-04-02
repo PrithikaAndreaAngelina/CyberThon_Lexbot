@@ -1,0 +1,348 @@
+/* Typing animation */
+@keyframes typingAnimation {
+    0%, 60%, 100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    30% {
+      transform: translateY(-5px);
+      opacity: 1;
+    }
+  }
+  
+  /* Chatbot container */
+  .chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Floating chat button */
+  .chatbot-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #EC5228;
+    color: white;
+    border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  }
+  
+  .chatbot-button:hover {
+    transform: scale(1.1);
+  background-color: #1d4ed8;
+  }
+
+  .chatbot-button svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Chat window */
+  .chatbot-window {
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  /* Header styles */
+  .chatbot-header {
+    background-color: #EC5228;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .bot-icon {
+    color: #3F7D58;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  .header-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  /* Messages container */
+  .messages-container {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Message bubbles */
+  .bot-message-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .user-message-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .reaction-icon {
+    padding-top: 20px;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .reaction-icon:hover {
+    color: #EC5228;
+  }
+  
+  .message-time {
+    font-size: 10px;
+    color: #888;
+    margin-bottom: 4px;
+    text-align: left;
+  }
+  
+  .message-bubble {
+    max-width: 80%;
+    white-space: pre-line;
+    line-height: 1.4;
+  padding: 10px 15px;
+  border-radius: 18px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+    font-size: 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  .bot-bubble {
+    background-color: rgb(242, 233, 217);
+    align-self: flex-start;
+  }
+  
+  .user-bubble {
+    background-color: #EC5228;
+    color: white;
+    align-self: flex-end;
+  }
+  
+  /* Options container */
+  .options-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+  
+  .option-button {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+  
+  .option-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Input area */
+  .input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    background-color: white;
+    align-items: center;
+  }
+  
+  .emoji-button {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    padding: 8px;
+  }
+  
+  .emoji-button:hover {
+    color: #EC5228;
+  }
+  
+  .chat-input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    margin: 0 8px;
+  }
+  
+  .chat-input:focus {
+    border-color: #EC5228;
+  }
+  
+  .send-button {
+    background: #EC5228;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .send-button:hover {
+    background-color: #d3431a;
+  }
+  
+  .send-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Typing indicator */
+  .typing-indicator {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    margin-left: 28px;
+  }
+  
+  .typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+  }
+  .input-container form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .option-button {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s;
+  }
+
+  .chat-input:focus, 
+  .option-button:focus, 
+  .send-button:focus {
+    outline: 2px solid #EC5228;
+    outline-offset: 2px;
+  }
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+
+.option-button:hover {
+    background-color: #e0e0e0;
+  }
+  .question-prompt {
+    color: #666;
+    font-size: 0.8em;
+    margin-top: 5px;
+    font-style: italic;
+  }
+
+  .tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  .chatbot-button:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+
+/* Remove the orange separator line */
+.message-bubble:after {
+  display: none !important;
+}
+
+/* If it's a different element creating the line, use this instead */
+.chatbot-window hr, 
+.chatbot-window .separator {
+  display: none !important;
+}
+
+/* Remove separator for specific messages */
+.message-bubble.no-separator {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Or if using ::after for the orange line */
+.message-bubble.no-separator::after {
+  display: none;
+}
